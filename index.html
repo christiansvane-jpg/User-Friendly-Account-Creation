@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find dit træningsfællesskab hos PACE. En HTML- og CSS-demo af en tilgængelig oprettelsesformular.">
+    <title>Opret profil | PACE</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#signup">Gå til formularen</a>
+    <header class="site-header">
+        <div class="container header-row">
+            <a class="logo" href="index.html" aria-label="PACE forside">PACE<span aria-hidden="true">/</span></a>
+            <nav aria-label="Hovednavigation">
+                <ul class="menu">
+                    <li><a href="#community">Fællesskabet</a></li>
+                    <li><a class="active" href="#signup">Opret profil <span aria-hidden="true">↗</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-layout">
+        <section class="intro" id="community" aria-labelledby="intro-title">
+            <p class="eyebrow">SVØM. CYKEL. LØB. SAMMEN.</p>
+            <h1 id="intro-title">Dit tempo.<br>Dit næste mål.<br><span>Dit fællesskab.</span></h1>
+            <p class="intro-text">De bedste kilometer er dem, vi deler. Find træningsmakkere og et fællesskab, der passer til dig.</p>
+            <div class="intro-bottom">
+                <p class="eyebrow">ALLE NIVEAUER. SAMME LYST.</p>
+                <p>Fra den første løbetur til den næste triatlon. Her er der plads til din ambition.</p>
+            </div>
+            <details class="about-demo">
+                <summary>Om denne demo</summary>
+                <p>PACE er et fiktivt fællesskab lavet til skoleprojekt. Du kan afprøve formularen, men vi opretter ingen konto og sender eller gemmer ingen formularoplysninger. Brug fiktive data.</p>
+            </details>
+        </section>
+
+        <section class="signup" id="signup" aria-labelledby="signup-title">
+            <p class="eyebrow">DIT FÆLLESSKAB STARTER HER</p>
+            <h2 id="signup-title">Find din plads i feltet.</h2>
+            <p class="muted">Fortæl lidt om dig selv. Felter markeret med * skal udfyldes.</p>
+            <p class="demo-note"><strong>Demo:</strong> Brug fiktive oplysninger. Der oprettes ingen rigtig konto.</p>
+            <form action="complete.html" method="get" aria-labelledby="signup-title">
+                <fieldset class="form-section">
+                    <legend><span class="step">01</span> Din konto</legend>
+                    <div class="fields">
+                        <div class="field">
+                            <label for="full-name">Fulde navn *</label>
+                            <input id="full-name" type="text" autocomplete="name" required minlength="2" maxlength="80" placeholder="Fx Alex Jensen" aria-describedby="name-help name-error">
+                            <small id="name-help">Mindst 2 tegn.</small>
+                            <small class="error" id="name-error">Skriv dit navn med mindst 2 tegn.</small>
+                        </div>
+                        <div class="field">
+                            <label for="email">E-mail *</label>
+                            <input id="email" type="email" autocomplete="email" required maxlength="254" placeholder="alex@example.com" aria-describedby="email-error">
+                            <small class="error" id="email-error">Skriv en e-mail med @, fx alex@example.com.</small>
+                        </div>
+                        <div class="field full-width">
+                            <label for="password">Adgangskode *</label>
+                            <input id="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,128}" aria-describedby="password-help password-error" title="8-128 tegn med mindst ét stort bogstav, ét lille bogstav og ét tal.">
+                            <small id="password-help">8-128 tegn med mindst ét stort bogstav (A-Z), ét lille bogstav (a-z) og ét tal. Brug en testadgangskode.</small>
+                            <small class="error" id="password-error">Tjek længden, og tilføj stort bogstav, lille bogstav og tal.</small>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend><span class="step">02</span> Lidt om dig</legend>
+                    <div class="fields">
+                        <div class="field">
+                            <label for="city">By *</label>
+                            <input id="city" type="text" autocomplete="address-level2" required minlength="2" maxlength="80" placeholder="Fx Aarhus" aria-describedby="city-error">
+                            <small class="error" id="city-error">Skriv din by med mindst 2 tegn.</small>
+                        </div>
+                        <div class="field">
+                            <label for="country">Land *</label>
+                            <select id="country" required autocomplete="country-name" aria-describedby="country-error">
+                                <option value="">Vælg land</option>
+                                <option>Danmark</option><option>Spanien</option><option>Norge</option><option>Sverige</option><option>Tyskland</option><option>Andet</option>
+                            </select>
+                            <small class="error" id="country-error">Vælg et land fra listen.</small>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Telefon (valgfrit)</label>
+                            <input id="phone" type="tel" autocomplete="tel" pattern="\+?[0-9 \(\)\-]{8,20}" maxlength="20" placeholder="Fx +45 12345678" aria-describedby="phone-help phone-error">
+                            <small id="phone-help">8-20 tegn. Tal, mellemrum, +, bindestreger og parenteser.</small>
+                            <small class="error" id="phone-error">Brug 8-20 tegn og et + kun først i nummeret.</small>
+                        </div>
+                        <div class="field">
+                            <label for="start-date">Ønsket træningsstart (valgfrit)</label>
+                            <input id="start-date" type="date" aria-describedby="date-help">
+                            <small id="date-help">Hvornår vil du gerne træne med andre?</small>
+                        </div>
+                        <div class="field full-width">
+                            <label for="photo">Profilbillede (valgfrit)</label>
+                            <input id="photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="photo-help">
+                            <small id="photo-help">Vælg JPG, PNG eller WebP. Filen bliver kun valgt lokalt og uploades ikke.</small>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend><span class="step">03</span> Din træning</legend>
+                    <fieldset class="choice-group">
+                        <legend>Dit niveau *</legend>
+                        <div class="choices">
+                            <label class="choice"><input type="radio" name="level" value="new" required> Ny i sporten</label>
+                            <label class="choice"><input type="radio" name="level" value="regular" required> Godt i gang</label>
+                            <label class="choice"><input type="radio" name="level" value="experienced" required> Erfaren</label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="choice-group">
+                        <legend>Hvad vil du træne? (valgfrit)</legend>
+                        <p class="help">Vælg gerne flere.</p>
+                        <div class="choices">
+                            <label class="choice"><input type="checkbox" id="swim"> Svømning</label>
+                            <label class="choice"><input type="checkbox" id="bike"> Cykling</label>
+                            <label class="choice"><input type="checkbox" id="run"> Løb</label>
+                        </div>
+                    </fieldset>
+                    <div class="fields">
+                        <div class="field">
+                            <label for="goal">Næste mål *</label>
+                            <select id="goal" required aria-describedby="goal-error">
+                                <option value="">Vælg dit mål</option>
+                                <option>Finde træningsmakkere</option><option>Komme godt i gang</option><option>Løbe 5 eller 10 km</option><option>Gennemføre en triatlon</option><option>Forbedre min tid</option>
+                            </select>
+                            <small class="error" id="goal-error">Vælg det mål, der passer bedst til dig.</small>
+                        </div>
+                        <div class="field">
+                            <label for="hours">Træningstimer pr. uge *</label>
+                            <input id="hours" type="number" min="1" max="40" step="1" required placeholder="Fx 6" aria-describedby="hours-help hours-error">
+                            <small id="hours-help">Et helt tal fra 1 til 40.</small>
+                            <small class="error" id="hours-error">Vælg et helt antal timer mellem 1 og 40.</small>
+                        </div>
+                        <div class="field full-width">
+                            <label for="ambition">Hvor konkurrenceminded er du? (valgfrit)</label>
+                            <small id="ambition-help">Fra 1 (mest for hyggen) til 5 (går efter en rekord). Startværdi: 3. Brug piletaster eller træk i skyderen.</small>
+                            <input id="ambition" type="range" min="1" max="5" step="1" value="3" list="ambition-ticks" aria-describedby="ambition-help">
+                            <datalist id="ambition-ticks"><option value="1" label="1"></option><option value="2" label="2"></option><option value="3" label="3"></option><option value="4" label="4"></option><option value="5" label="5"></option></datalist>
+                            <div class="range-labels" aria-hidden="true"><span>1 · For hyggen</span><span>5 · Ny rekord</span></div>
+                        </div>
+                        <div class="field full-width">
+                            <label for="bio">Hvad skal din træningsmakker vide? (valgfrit)</label>
+                            <textarea id="bio" rows="4" maxlength="500" placeholder="Fx: Jeg søger nogen at løbe en rolig tur med i weekenden." aria-describedby="bio-help"></textarea>
+                            <small id="bio-help">Højst 500 tegn. Fortæl om dit tempo, dine mål eller din yndlingstur.</small>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="consent">
+                    <label class="check-row"><input id="terms" type="checkbox" required aria-describedby="terms-help"> <span>Jeg accepterer demovilkårene. *</span></label>
+                    <details id="terms-help">
+                        <summary>Læs demovilkår og privatliv</summary>
+                        <p>Dette er en skoleopgave. Du afprøver kun en formular. Der oprettes ingen konto, og ingen personoplysninger eller filer sendes til en server. Dit valgte træningsniveau kan vises i adressen på kvitteringssiden. Brug fiktive oplysninger.</p>
+                    </details>
+                    <label class="check-row"><input id="newsletter" type="checkbox"> <span>Jeg vil gerne modtage træningsinspiration (valgfrit i denne demo).</span></label>
+                </div>
+                <button class="button" type="submit">Afprøv oprettelse <span aria-hidden="true">↗</span></button>
+                <p class="submit-note">Din browser kontrollerer felterne, før du går videre til demosiden.</p>
+            </form>
+        </section>
+    </main>
+    <footer class="container site-footer"><p>PACE / Et fiktivt træningsfællesskab</p><p>WEB1 · HTML &amp; CSS · 2026</p></footer>
+</body>
+</html>
+
